@@ -7,7 +7,7 @@
     <title>Document</title>
     <style>
         table {border-collapse : collapse;}
-        table, td {border : 1px solid #000;}
+        table {border : collapse;}
 
     </style>
 </head>
@@ -30,8 +30,6 @@
 
     print "---------------------------------<br>";
 
-    // 숫자는 1씩 증가 값을 구하는 것이여서 $num이라는 변수를 써서 쉽게 만듬.
-    //그리고 ++을 붙여서 1씩 증가로 만들어준다. 
     
 
     ?>

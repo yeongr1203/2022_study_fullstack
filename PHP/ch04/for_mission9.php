@@ -34,28 +34,28 @@
     // 썜풀이
     // 인덱스 값만큼 돌면 인덱스 값만큼 나타남.
     
-    $star = rand(3,10);
-    print "star:$star<br>";
-    for($i=1; $i<$star; $i++)
-    {
-        for($z=1; $z<=$i; $z++)
-        {
-            print "*";
-        }
-        print "<br>";
-    }
-
-
-
     // $star = rand(3,10);
-    // print "star: $star <br>";
-
-    // $sum = "";
-    // for($z=1; $z<=$star; $z++)
+    // print "star:$star<br>";
+    // for($i=0; $i<$star; $i++)
     // {
-    //     $sum = $sum."@";
-    //     print "{$sum}<br>";
+    //     for($z=0; $z<=$i; $z++)
+    //     {
+    //         print "*";
+    //     }
+    //     print "<br>";
     // }
+
+    // print "-----<br>";
+
+    $star = rand(3,10);
+    print "star: $star <br>";
+
+    $sum = "";
+    for($z=1; $z<=$star; $z++)
+    {
+        $sum = $sum."@";
+        print "{$sum}<br>";
+    }
 
 ?>
 <!-- 

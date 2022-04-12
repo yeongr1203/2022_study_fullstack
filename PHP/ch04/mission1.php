@@ -23,9 +23,7 @@ if ( $score >= 90 )
 } else if ( $score <= 80 )
 
 
-// 앞자리 뒷자리 나눠서 분리해서 작업.
-// $val_1 = 10으로 나눠서 10자리 숫자를 구해서 작업.
-// $val_2 = 1자리 숫자를 구할때 사용함.
+
 
 
 
@@ -41,7 +39,7 @@ if($score >100 || $score <0)
 else {
         $sign = "F";
         $symbol = "";
-        $val_1 = intval($score/10); //intval 대신 floor = 정수로 표현.
+        $val_1 = intval($score/10);
         switch($val_1)
         {
             case 10: case 9:
