@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container { width:1200px; margin : 0 auto;}
+        /* margin - 위아래 20px준 이유는 위에 붙으니까 떨어뜨림, auto는 자동정렬이라 가운데 정렬 */
+        header { width: 100%; height: 120px; background-color:antiquewhite }
+        #side { width:300px; height: 600px; float:left; background-color:cornflowerblue;}
+        #main { width:900px; height: 600px; float:left; background-color:aquamarine;}
+        footer {width: 100%; height: 100px; clear:both; background-color: brown;}
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>헤더</header>
+        <section id="side">사이드바</section>
+        <section id="main">본문</section>
+        <footer>푸터</footer>
+    </div>
+</body>
+</html>
+
+<!-- 
+    컨테이너id에 width를 설정해둬서
+    안에 들어있는 자식들이 100%해도 화면상이아닌 id width값만큼이 최대치.
+
+
+    <div id="container">
+       <header>헤더</header>
+        <section id="side">사이드바</section>
+        <section id="main">본문</section>
+        <footer>푸터</footer>
+    </div>
+
+    위 상황일땐, 
+
+    스타일스트를
+    section {float:left;}
+    section:nth-child(1) // section의 자식들중 하나 를 설정할때 ()안에 숫자를 넣으면 그 영역이 선택되어 먹힘.
+    section:firtst-child { width: 300px; height:100%; background: aqua;}
+    section:second-child {width:}
+    section:not(first-child) {} // 첫뻔째 child만 빼고! 다~ 라는 뜻.
+
+    child를 사용할때는 반드시 section들이 하나의 부모를 가지고 있어야함. 고로 묶여있어야 child태그가 먹힘.
+
+    부모기준으로 몇번째인지를 알아야함. section은 두번째 세번째에 있으므로, 괄호에는 2나 3이 들어야한다.
+
+    
+    \
+    div로 묶을땐 
+
+
+
+ -->

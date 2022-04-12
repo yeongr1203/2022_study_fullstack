@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #fix {position:fixed; 
+            padding:20px 10px;
+            left:0; 
+            top:0; 
+            background-color:black; 
+            color:#fff;
+            width:100%
+            }
+        #container {height:4000px; background-color:antiquewhite;
+                margin-top:60px;
+        /* #container에 margin-top을 주어서 아래로 위치조정하여 텍스트가 보이게 함.
+            마진값을 주기전에는 컨테이너가 fixed때문에 뒤에 가려져서 보이지 않음.
+            fixed 줄때 조심해야함. 가려질수있으니 해결방법을 찾아 해결해야함.
+        */
+            }
+        
+    </style>
+
+</head>
+<body>
+    <div id="fix">안녕</div>
+    <div id="container">
+        안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin:0; padding:0;}
+        html, body { height: 100%; }
+        #container { height: 100%; }
+        .item { display:inline-block; 
+            border:1px solid rgb(204,203,203); 
+            width:100px; 
+            height: 200px; 
+            margin-right:10px;} 
+        .item > div:nth-child(1) { height: 70%} 
+        /* item div 직속으로 있는 애 2개만 쓸건데, 높이가 200px인데 거기서 70프로만 쓰겠다고 설정해서 크기가 저정도 나옴. */
+        .item .info { position: relative; height: 30%; background-color: aliceblue;}
+        /* item info에 있는 애들에 높이 30프로만 주고 색상 변경. */
+        .item .info div:first-child { position: absolute; left: 5px; bottom:35px;}
+        /* 
+            info의 첫번째 애한테 포지션을 앱솔루트를 주면 앱솔루트는 부모를 찾는데, 스탠틱이 아닌애를 찾음.
+            스탠틱일경우 넘어가고 해서 제일 앞에 있는 바디가 부모가 되면서 그게 기준이 되는것.
+            item한테 스탠틱이 아닐수있도록 미리 설정. // display:inline-block;
+            위치도 왼쪽과  아래기준으로 설정해서 위치설정을 해준다.
+            앱솔루트
+            item인 div한테 display작업해서 밑이아닌 옆으로 떨어짐.
+            마진을 줘서 10px씩 떨어져있음.
+        */
+    </style>
+</head>
+<body>
+    <div id="containter">
+        <div class="item">
+                <div>이미지</div>
+                <div class="info">
+                    <div>내용</div>
+                </div>
+        </div>
+        <div class="item">
+            <div>이미지</div>
+            <div class="info">
+                <div>내용</div>
+           </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- 
+    포지션에 relative값을 주는 이유는 설정하는 게 부모값을 설정하고 싶어서 
+
+ -->

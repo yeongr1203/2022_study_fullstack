@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {background:#ffd800; float: left; }
+        #box2 { background: #0094ff; float: left; }
+        #box3 { background: #00ff21; clear: both; }
+        /* float 쓰면, 다음에는 clear를 꼭 써야함. 
+           안쓰면 float 다음꺼도 영향을 받아 따라옴.
+           float를 사용한다음엔 반드시 다음에 오는 게 영향을 받지 않게 하기위해서는
+          clear가 반드시 작성되어야 한다. */
+        #box4 { background: #a874ff; }
+    </style>
+</head>
+<body>
+    <div id="box1">박스1</div>
+    <div id="box2">박스2</div>
+    <div id="box3">박스3</div>
+    <!-- claer을 주지 않으면 인라인처럼 되어서 1과 2의 같은 줄에 올라옴.
+    4는영향을 받지 않는 이유는 이미 앞에서 자동으로 플로트가 끝남.
+    float를 쓰고나면 다음거에는 clear를 써서 설정한다.
+    -->
+    <div id="box4">박스4</div>
+</body>
+</html>

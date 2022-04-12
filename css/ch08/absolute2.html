@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #back {
+             width: 500px; height:300px;
+        background: url('1.jpg') no-repeat;
+        position:relative;
+        /* #back에 right:20px;을 줄 경우 이미지가 이동하면서 자식인 css3도 함께 이동. */
+    }
+        #css3 { position:absolute;
+                color: #fff;
+                font-size:4rem;
+                font-weight: bold;
+                bottom:50px;
+                right:40px;
+                text-shadow: 3px 3px 5px #000;;
+                
+        
+        }
+    </style>
+</head>
+<body>
+    <div id="back">
+        <div id="css3">CSS3</div>
+    </div>
+</body>
+</html>

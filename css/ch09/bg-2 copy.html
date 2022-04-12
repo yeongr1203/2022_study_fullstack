@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{ list-style-type: none; padding-left:10px;}
+        li { 
+
+            /* background-image: url('images/book-icon.png');
+            background-repeat: no-repeat;
+            background-position: left center;
+            line-height:40px; */
+            background:url('images/book-icon.png') no-repeat left center;   
+          /* 위의 주석 축약으로 작업 */
+            padding-left: 50px;
+            line-height: 40px;
+
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>이지퍼블리싱</h1>
+    <ul>
+        <li onclick="moveTo('https://www.naver.com')";>회사소개</li>
+        <li onclick="moveTo('https://www.naver.com')";>도서</li>
+        <li onclick="moveTo('https://www.naver.com')";>자료실</li>
+        <li onclick="moveTo('https://www.naver.com')";>동영상강의</li>
+    </ul>
+    <script>
+        function moveTo(url) {
+            location.href = url;
+        }
+    </script>
+</body>
+</html>
+
+
+<!--  자바스크립트로 사용. -->

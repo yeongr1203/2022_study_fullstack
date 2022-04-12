@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {box-sizing: border-box;}
+        nav > ul { list-style: none; }
+        /* nav안의 ul 자식한테만 list-style을 설정하겠다  */
+        nav > ul > li {
+                        display: inline-block;
+                        padding: 20px;
+                        margin: 0px 20px; 
+                        /* 2개일땐, 위아래px 좌우px /  */
+                        border: 1px solid #222222;
+                        cursor: pointer;
+                        /* 커서는 li영역에 마우스 되었을때 손모양으로 바뀌게 됨. */
+                    }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <nav>
+            <ul>
+                <li>menu 1</li>
+                <li>menu 2</li>
+                <li>menu 3</li>
+                <li>menu 4</li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
+
+<!--
+
+display:
+
+block
+inline
+=width, height사용 불가.
+inline-block
+=위치는 인라인처럼되지만 width, height값을 설정할 수 있음. 
+none
+화면에 없어졌으면 좋겠다. 존재자체가 없음.
+
+
+visibility:hidden;
+공간차지는 하지만 보이지 않음. 
+display: none;
+공간차지 없음. 보이지도 않음
+opacity 
+투명도를 주는 것.
+
+
+
+
+nav, ul // nav와 nav안에 ul이면 다 설정.
+nav ul // nav 안에 있는 ul이면 다 설정.
+nav > ul // nav 바로 아래 ul에만 설정하겠다 라는 뜻.
+
+
+
+
+
+
+-->

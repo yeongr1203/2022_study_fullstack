@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box { border: 1px solid #ccc; /* 영역잘보기 위해 일단 기재함*/
+            width:300px; height:300px; margin:20px;
+            background: url('images/bg4.jpg') no-repeat left top;
+        }
+        #bg1 { background-size:auto;} /* 이미지가 알아서 맞춰서 나옴. */
+        #bg2 {background-size: auto 200px;} /* 높이를 자동으로 맞추려면 앞이 auto 저렇게 넣기.*/
+        #bg3 {background-size: 50% auto;} /* 영역의 50프로사이즈에 맞춰서 나옴*/
+        #bg4 {background-size: 100% 100%;}  /*강제로 영역에 맞춰져서 이미지가 망가짐*/
+        #bg5 {background-size: contain;} /*영역안에 사진이 딱맞춰짐*/
+        #bg6 {background-size: cover;} /*비율이 깨지지 않아서 커버를 제일 많이 씀*/
+
+</style>
+</head>
+<body>
+    <div id="container">
+        <div class="box" id="bg1"></div>
+        <div class="box" id="bg2"></div>
+        <div class="box" id="bg3"></div>
+        <div class="box" id="bg4"></div>
+        <div class="box" id="bg5"></div>
+        <div class="box" id="bg6"></div>
+    </div>
+</body>
+</html>
