@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* input:not([type='radio']), input:not([type='checkbox']){
+            padding:5px;
+        }  */
+        /* 이건 반대로 하는 방향 */
+        
+        input[type='text'], input [type='tel']{
+            padding:5px;
+        } 
+        /* 정방향 */
+        
+        input [type='radio']:checked + label {
+            background-color:aqua;
+        }
+        /* 디테일하게 들어갈 때, [type='radio'] 지정해서 쓰고
+        뭉둥여도 상관 없으면
+        input : checked + label {} 로 작업해도 됨.
+        \*/
+        input[type='checkbox']:checked + label {
+            background-color:rgb(160,68,184); 
+        }
+    
+        </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>개인정보</legend>
+            <div>
+                <label for="name">이름</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label 랙="tel">연락처</label>
+                <input type="tel" id="tel">
+            </div>
+        </fieldset>
+    </form>
+    <ul>
+        <li>
+            <input type="radio" name="room" id="basic">
+            <label for="basic">기본형(최대 2인)</label>
+        </li>
+        <li>
+            <input type="radio" name="room" id="family">
+            <label for="family">가족형(최대 8인)</label>
+        </li>
+        <li>
+            <input type="checkbox" name="habbit" id="h1">
+            <label for="h1">축구</label>
+        </li>
+        <li>
+            <input type="checkbox" name="habbit" id="h2">
+            <label for="h2">배구</label>
+        </li>
+    </ul>
+    
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .contents :nth-child(2) { color:red; }
+        .contents p:nth-of-type(3) { color: blue; }
+       .contents p:nth-last-of-type(1) { color: pink; } */
+
+        /* .contents :nth-child(odd) { color: red; }
+        .contents :nth-child(even) {background-color: azure;} */
+
+        /* 
+        0>1
+        1>3
+        2>5
+        */
+        .contents :nth-child(3n+1){ color: purple;} /* 생각보다 잘 안씀.=홀수=odd*/
+        .contents :nth-child(2n) { background-color:brown;} /* 짝수일때 사용 = even */
+    </style>
+</head>
+<body>
+    <div class="contents">
+        <h2>이용안내</h2>
+        <p>p1</p>
+        <p>p2</p>
+        <h2>객실 소개</h2>
+        <p>p3</p>
+        <h2>예약 방법 및 요금</h2>
+        <p>p4</p>
+    </div>
+</body>
+</html>
+
+<!-- 
+
+
+ .contents :nth-child(2) {
+            color:red;
+        }
+        /* 정확하게 p태그여야만 할 경우
+         .contents p:nth-child(4) {
+            color:red;
+        }
+        */
+        .contents p:nth-of-type(3) {
+            color: blue;
+        }
+        /* 위에서 부터 순서가 시작. */
+
+        .contents p:nth-last-of-type(1) { color: pink; }
+        /* 밑에서 부터 순서가 시작. */
+
+
+======
+
+ .contents :nth-child(odd) { color: red; }
+        .contents :nth-child(even) {background-color: azure;}
+odd=홀수
+even=작수
+
+
+
+
+ -->

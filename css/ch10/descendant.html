@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section p { 
+                    color:blue; background-color:aqua;
+        /* 하위선택자 section p = 섹션 아래의 p 안에 있는 모든 p*/
+        }
+        section > p { background-color: antiquewhite;
+        /* 자식선택자 section > p = 섹션아래에 1차 자식의 p = 첫번째 자식에게만 디테일하게 적용할 수 있음.*/
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>예약 방법 & 사용 요금</h1>
+        <p>아직 온라인 예약 신청이...</p>
+        <div>
+            <p>가족실(2~4인) : 60,000원</p>
+            <p>도미토리(4인 공용) : 25,000원/일</p>
+        </div>
+    </section>
+</body>
+</html>

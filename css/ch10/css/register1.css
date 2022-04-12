@@ -1,0 +1,52 @@
+body {background-color:#ccc;}
+#signup label {
+    display:inline-block;
+    text-align: center;
+    float:left;
+    font-size: 13px;
+    width: 110px;
+}
+form { margin:50px; padding: 20px;
+    width:50%;
+background-color:#fff;
+
+
+
+}
+
+li {list-style:none; }
+li > input { margin-bottom: 20px;}
+fieldset { margin-bottom:20px;}
+form > fieldset:last-child { text-align: center;  }
+
+
+
+
+
+
+
+
+
+/* 
+
+
+/* #signup label {
+    float:left;
+    font-size: 13px;
+    width: 110px;
+}
+
+li {list-style:none;}
+li > input { margin-bottom:10px;}
+fieldset { margin-bottom:20px;};} */
+
+/* 
+input에 line-height 14px이상 값을 주지 않으면 한글을
+다른 엘리먼트들이 조금씩 움직임이 발생함.
+ */
+/*  
+ul>li:not(:last-child) {margin-bottom:5px;}
+/* 마지막 li 엘리먼트를 제외하고 전부=라는뜻 */
+/* 
+ul>li:not(:first-child) {margin-top:5px;}
+/* 위 문장과 장식은 다르지만 결과는 같음. */

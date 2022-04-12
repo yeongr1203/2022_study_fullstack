@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {background-color:aliceblue;}
+        .navi ul li { display:inline-block;
+        width:150;
+        padding:15px; 
+        }
+        .navi a:link, .navi a:visited  { 
+         display:block; font-size: 14px; color:#000;
+         padding: 10px;
+         background-color: aliceblue;
+         text-align: center;
+         text-decoration: none;
+        
+        }
+        /* a:link / a:visited = 가상링크드
+        a:link = 방문전
+        잘 안쓰이고, 그냥 색상을 지정함.
+
+        */
+
+        .navi a:hover, .navi a:focus {
+            background-color: #222;
+            color:#fff;
+        }
+        /* 컴퓨터한테 정보를 주는게 input
+            input, a, select texterea 태그
+            focus 사용가능.
+            
+        */
+        .navi a:active{
+            background-color:#f00;
+
+
+        }
+        /* active-누르고 있는동안 //  */
+    </style>
+</head>
+<body>
+    <nav class="navi">
+        <ul>
+            <li><a href="http://www.naver.com">이용 안내</a></li>
+            <li><a href="http://www.naver.com">객실 소개</a></li>
+            <li><a href="http://www.naver.com">예약 방법 및 요금</a></li>
+            <li><a href="#">예약하기</a></li>
+
+        </ul>
+    </nav>
+</body>
+</html>
+<!-- 
+    네비를 만드는 순간 ul안에 있는 것들은 다 네비임.
+
+    .navi a:link { color:red; } 
+        /* 방문하기 전 링크 색상*/
+        .navi a:visited { color:black; }
+        한번이라도 방문할 때 색상
+
+
+
+ -->

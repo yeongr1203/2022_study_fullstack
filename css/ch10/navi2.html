@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img:focus {width:100px;}
+        /* 
+         :focus는 키보드 이벤트에 반응할 수 있는 엘리먼트
+          or
+          다른사용자의 input에 반응할 수 있는 엘리먼트에 존재.
+          e.g.(예를들어) input, texterea, select, a
+        */
+        div:focus {background-color: #f00;}
+        select:focus: {background-color:aqua;}
+        textarea:focus {background-color: #f00;}
+        ul:focus {background-color: aqua;}
+        ul {background-color: aliceblue;}
+        .navi ul li {display:inline-block; width:150px; padding: 10px;}
+        .navi a:link, .navi a:visited {
+            display: block; font-size: 14px; color:black;
+            padding: 10px;
+            text-decoration: none;
+            text-align: center;
+
+        }
+        .navi a:hover {background-color: #222; color:#fff;}
+        .navi a:active { background-color: #F00;}
+    </style>
+</head>
+<body>
+    <img tabindex="1" src="">
+    <div tabindex="2">222</div>
+    <tabindex tabindex="3"></tabindex>
+    <select>
+        <option>aaa</option>
+    </select>
+    <nav class="navi">
+        <ul>
+            <li><a href="#">이용 안내</a></li>
+            <li><a href="#">객실 소개</a></li>
+            <li><a href="#">예약 방법 및 요금</a></li>
+            <li><a href="#">예약하기</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
+<!-- 
+    네비를 만드는 순간 ul안에 있는 것들은 다 네비임.
+
+    .navi a:link { color:red; } 
+        /* 방문하기 전 링크 색상*/
+        .navi a:visited { color:black; }
+        한번이라도 방문할 때 색상
+
+
+
+    img 나 div는 tabiindex를 써서 사용가능. 안주면 안됨.
+
+ -->

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>연습문제 1</title>  
+  <style>
+    img {
+      margin-right:50px;
+      border:1px solid #ccc;
+      box-shadow: 2px 2px 5px #ccc;
+    }
+
+    /* 
+    body img:first-child{
+      border: 2px solid #f00;
+    }
+    이것도 가능. body쓰고 띄워쓰면 body의 img의첫번째로 되는것.
+    img를 빠뜨리면 모든 태그의 첫번째 영역에 다 설정이 되어버림.
+    */
+    /* img:first-child {
+      border: 2px solid #f00; */
+      /* 
+      border-color:red;
+      border-width:2px;
+      상단처럼 작성해도 됨.
+      */
+    }
+     
+    img:nth-of-type(1) {
+      border: 2px solid #f00; }
+      /* 가장 안전한 방법 */
+  </style>
+</head>
+<body>
+  <img src="images/1.jpg" alt="">
+  <img src="images/2.jpg" alt="">
+  <img src="images/3.jpg" alt="">
+</body>
+</html>
+
+<!-- 
+img가 body의 자식.
+img중에 첫번째 자식
+
+ -->

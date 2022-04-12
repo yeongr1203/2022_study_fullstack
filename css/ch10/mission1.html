@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      /* label이 input을 담고 있는 것만 유지 */
+      input:checked + span { color: red; font-weight: bold;}
+      /* input 앞에 span태그 감싼 영역을 input앞으로 옮겼을땐 선택되기가 힘듬. */
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <label>
+                <input type="radio" name="room" checked>
+                <sapn>기본형(최대 2인)</sapn>
+            </label>
+            <label>
+                <input type="radio" name="room">
+                <span>가족형(최대 8인)</span>
+            </label>
+            <label>
+                <input type="radio" name="room" checked>
+                <sapn>기본형(최대 2인)</sapn>
+            </label>
+            <label>
+                <input type="radio" name="room">
+                <span>가족형(최대 8인)</span>
+            </label>
+        </li>
+    </ul>
+</body>
+</html>
+<!-- 
+    text를 따로 감싸기
+
+
+ -->

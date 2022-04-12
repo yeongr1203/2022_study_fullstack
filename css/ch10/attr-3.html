@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [class ~= 'button'] { color : red;}
+        /* = 은 button이라고 명확해야하고,
+            ~=은 button이라는 속성이 들어 있으면 먹힘.
+        */
+
+        input[type="text"][value~="안녕"] { color:aqua; }
+        /* 어트리뷰트(value안의 값) : 실시간으로 바뀐 value값에는 반응을 한다. */
+
+        div [class ~= 'button'] { color : blueviolet;}
+        /* div안에서 button인 경우 저 색삭을 지정하겠다 라는 의미 */
+
+        .color_red {color:red;}
+        .color_blue {color:blue;}
+        /* 요즘은 선택해서 하나씩 먹임. */
+
+        
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#" class="flat">메뉴1</a></li>
+        <li><a href="#" class="flat aaa">메뉴2</a></li>
+        <li><a href="#" class="button">메뉴3</a></li>
+        <li><a href="#" class="flat button">메뉴4</a></li>
+        <li><input type="text"  value="안녕"></li>
+        <li><input type="text"  value=""></li>
+        <!-- value안에 없을땐 스타일속성이 먹히지 않음. value에 안녕이 있어야함. 
+            attribute (어트리뷰트) -  value = "내용" // 내용이 어트리 뷰트. 적용하려는 내용.
+            property(프로퍼티) - 적을때 마다 변동되는 값을 프로프투
+        -->
+    </ul>
+    <div class="button">메뉴 5</div>
+    <div class="flat button">메뉴 5</div>
+</body>
+</html>

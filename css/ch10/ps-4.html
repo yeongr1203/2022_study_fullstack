@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* li.new {color:red;} */
+         li > span { display:inline-block; width: 50px;}
+         li.new::after {
+             width: 100px;
+            top : -1.5px;
+            position: relative;
+            content: 'NEW!!';
+            font-size : x-small;
+            padding: 2px 4px;
+            margin : 0 10px;
+            border-radius:  2px;
+            background-color: #f00;
+            color: #fff; }
+
+            /* before는 span전에 생성되고, after는 span뒤에 생성 */
+
+
+
+
+         /* li.new::after {
+             width: 100px;
+            top : -1.5px;
+            position: relative;
+            content: 'NEW!!';
+            font-size : x-small;
+            padding: 2px 4px;
+            margin : 0 10px;
+            border-radius:  2px;
+            background-color: #f00;
+            color: #fff;
+         } */
+         /* 가상요소가 좋은 점.
+    저렇게 만들어서 쓰면 li에 클래스만 붙이면 자동으로 붙음. */
+
+
+    
+    
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>제품 목록</h1>
+        <ul>
+            <li class="new"><span>제품 A</span></li>
+            <li class="new"><span>제품 B</span></li>
+            <li><span>제품 C</span></li>
+            <li class="new"><span>제품 D</span></li>
+        </ul>
+    </div>
+</body>
+</html>
+
+<!-- 
+    li .new
+    // li의 자식이면서 new클래스를 가지고 있는 친구.
+       li는 포함 안됨.
+    li.new
+    // li이면서 new클래스를 가지고 있는 친구.
+ -->
+
+ <!-- 
+
+> , + ~ 배움.
+
+  -->
+  <!-- 
+
+    가상요소가 좋은 점.
+    저렇게 만들어서 쓰면 li에 클래스만 붙이면 자동으로 붙음.
+
+
+   -->

@@ -1,0 +1,68 @@
+#signup label {display: inline-block;
+    font-size:14px;
+    width: 110px;
+}
+input {line-height: 14px;}
+/* 
+input에 line-height를 14이상 값을 주지 않으면
+한글을
+
+다른 엘리먼트틀이 조금씩 움직임이 발생함.
+*/
+
+ul > li:not(:last-child) {margin-bottom:5px;}
+/* 마지막 li 엘리먼트를 제외하고 전부 */
+
+ul > li:not(:first-child) {margin-top:5px;}
+/* 위 문장과 방식이 다르지만 결과는 같음 */
+
+#signup input [type='text']
+#signup input [type='password']
+#signup input [type='tel']
+#signup input [type='email'] {
+border : 1px solid red;
+border-radius : 3px;
+font-size: 13px;
+padding: 5px;
+width: 200px;
+
+}
+
+#signup input [:required] {
+    border: 1px solid red;
+    border-radius: 3px;
+}
+#signup input[readonly] {border:none;}
+
+
+
+
+
+
+
+/* body {background-color:#ccc;}
+
+form {background-color:#fff;
+    margin :20px;
+    width:50%;
+    text-align: center;
+    padding:10px;
+    font-size:13px;
+}
+#signup label {
+    width:110px;
+    float:left;
+    display:inline-block;
+    text-align: left;
+    }
+ #signup input[readonly] {border: none;}
+
+ul {list-style: none;}
+li > input { margin-bottom:10px;
+    border: 1px solid rgb(255, 0, 0);
+    border-radius : 3px;
+}
+fieldset { margin-bottom:20px;}
+form>fieldset:last-child {
+    text-align:center;}
+fieldset > button { border-radius: 5px;} */

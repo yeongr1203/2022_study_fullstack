@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {scroll-behavior: :smooth;}
+        #menu {position: :fixed; left:0; top:0; height:100px;}
+        body {padding-top:100px;}
+        div {height:1000px;}
+
+        [title$='eng'] {color:red;}
+        [value ^='aaa'] {color:red;}
+        /* value에  */
+
+        
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li><a href="#ctn1" title="english">영어</a></li>
+        <li><a href="#ctn2" title="japaness">일본어</a></li>
+        <li><a href="#ctn3" title="chiness">중국어</a></li>
+        <li><input type="text" value="aaa"></li>
+    </ul>    
+    <div id="top" title="engasdlhsfh">어떤것</div>
+    <h1 title="engahsdjfk">h1 어떤것</h1>
+    <div id="ctn1">
+        ctn1
+        <a href="#top">최상위로 이동</a>
+    </div>
+    <div id="ctn2">
+        ctn2
+        <a href="#top">최상위로 이동</a>
+    </div>
+    <div id="ctn3">
+        ctn3
+        <a href="#top">최상위로 이동</a>
+    </div>
+</body>
+</html>
+<!-- 
+
+ctn id값으로 이동됨.
+smooth를 춰서 천천히 이동.
+fixed는 고정이 되어서 붕 뜬 상태.
+
+
+ -->
