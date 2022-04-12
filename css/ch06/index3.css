@@ -1,0 +1,10 @@
+/* #id1 {color: brown;}
+.c1s1 {color:pink; }
+div { color: red; }
+div { color: blue; } */
+
+ul {list-style:none;}
+/*     ul이든 li이든 list 스타일을 none으로 설정해 아무것도 주지 않음.  */
+a {text-decoration: none; color:black;}
+div { background-color: antiquewhite; letter-spacing: 1px; line-height: 40px; text-align: center;}
+/*letter-spacing: 1.4px; 소수점으로도 가능. */
