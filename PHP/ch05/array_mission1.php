@@ -6,6 +6,7 @@
 
     */
 
+// 아래는 단순 계산.
     // $score_arr = array(100, 90, 33, 87, 65);
     // $t = $score_arr[0] + $score_arr[1] +$score_arr[2] +$score_arr[3] +$score_arr[4]; 
     // $s = $t/5;
@@ -13,16 +14,14 @@
     // print "$s";
 
 
-    $score_arr = array(100, 90, 33, 87, 65);
-    $len = count($score_arr);
-    $sum = 0;
-    for( $i=0; $i < $len; $i++ )
-    {
-        $sum = $sum + $score_arr[$i];
-    }
-    $svg = $sum/$len;
-    print "합계 : $sum <br>";
-    print "평균 : $svg <br>";
+$score_arr = array(100, 90, 33, 87, 65);
+$sum = 0; // 합계의 값을 주기 위한 변수
+for ($i=1; $i<=count($score_arr); $i++) // 반복문값이 array의 값의 숫자만큼이기 때문에 $i<=count($score_arr) 로 작성.
+{
+    $sum = $sum+$score_arr[$i]; // 합계의 변수는 합계값 + array의 모든값. $i로 반복문을 쓰기 때문에 $i로 작성.
+}
+$avg = $sum/count($score_arr); // avg는 평균을 뜻하는 단어로, 합계값/반복문숫자값 = 평균
+print "합계 : $sum <br> 평균 : $avg";
 
 
 
@@ -30,8 +29,6 @@
 
 $score_arr = array(100, 90, 33, 87, 65);
     $sum = 0;
-    //$sum = null; 예전에는 null을 썼지만 요즘 트렌드는 null을 쓰지 않고,
-    //       0; 꼭 값을 넣어줘야하는 습관을 들이기. null대신 0;으로 사용했음.
     
     for($i = 0; $i < count($score_arr); $i++)
     {

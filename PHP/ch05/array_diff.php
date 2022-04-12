@@ -12,8 +12,3 @@
     print ($arr1 === $arr2) . "<br>";
     print ($arr1 === $arr3) . "<br>";
 ?>
-<!-- 
-
-
-
- -->
