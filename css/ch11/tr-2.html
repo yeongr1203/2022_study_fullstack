@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 50px auto;
+            width: 100px;
+            height: 100px;
+            background-color: #fb5;
+            border: 1px solid #222;
+            transition: all ease-in 2s;
+            /* transition을 hover에 쓰면 마우스 떼고나면 바로 돌아가기 때문에 .box에 사용
+                돌아가도록 쓸 때 무조건 hover가 아닌 본영역에 지정.
+            */
+        }
+        .box:hover {
+            background-color: #f50;
+            width:200px; height:200px;
+            transform: rotate(270deg);
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

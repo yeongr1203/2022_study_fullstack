@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {padding-top: 200px;}
+        /* #movex { width:300px; height: 300px; background-color: burlywood; margin: 0 auto;} */
+        /* #movex:hover {transform: translate(50px, 90px);}  */
+        /* tranlatex(5opx); / tranlatey(90px); // 이걸 통합으로 상단에 작성. */
+        /* #movex:hover {transform: scale(1.5, 2)} */
+        /* 아래에껄상단에 합 */
+        /* #movex:hover { transform: scalex(2); } */
+         /* (2)는 2배, (1.2)하면 20프로만 가로로 커짐 */
+         /* #movex:hover { transform: scaley(2); } */
+        /* sacaley(2)하게 되면 세로로 2배커짐 */
+        /* #movex:hover { transform: rotate(20deg); }  */
+        /* #movex:hover {transform: skewX(20deg);} */
+        /* 가로 왼쪽이 20도 바닥 오른쪽이 20도 움직임. */
+        /* #movex:hover {transform: skewY(20deg);} */
+        /* 왼쪽 세로가 20도 바닥 20도 움직임. */
+
+        div#container{
+            width: 500px;
+            height: 80px;
+            background-color: #222;
+            color:#fff;
+            font-weight: bold;
+            line-height: 80px;
+            text-align: center;
+            transform : skewX(15deg);
+        }
+
+
+
+        #container > h1 { transform: skewX(-15deg);   }
+        
+    </style>
+</head>
+<body>
+    <div id="movex"></div>
+
+    <div>
+        <h1>CSS 변형 함수 익히기</h1>
+    </div>
+
+    <div id="container">
+        <h1>CSS 변형 함수 익히기</h1>
+    </div>
+
+</body>
+</html>
