@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div>
+            <label>나이 <input type="number" name="age" value="100"></label>
+        </div>
+        <div>
+            <label>가격<input type="range" name="price" step="10" value="10" min="0" max="100"></label>
+        </div>
+    </form>
+</body>
+</html>
+
+<!--html에 오는 것 모두 문자열로 읽힘.
+숫자처럼 보이지만 모두 문자열로 되어있음.
+
+range 줄에 value 값을 따로 주지 않으면 설정이 안됨. min과 max값을 설정해서 나타낼 수 있으나 ,
+현재로서는 정확하게 알수 없음.
+자바스크립트 할 때 확인이 가능함.
+
+step=은 10씩 올라가도록 설정할수있음.
+
+-->

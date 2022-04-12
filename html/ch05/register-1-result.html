@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>회원 가입을 환영합니다.</h1>
+    <form>
+        <fieldset>
+            <legend>사용자 정보</legend>
+            <ul>
+                <li>
+                    <lable for="uid">아이디</lable>
+                    <input type="text" id="uid">
+                </li>
+                <li>
+                    <lable for="umail">이메일</lable>
+                    <input type="email" id="umail" value="">
+                </li>
+                <li>
+                    <lable for="pw1">비밀번호</lable>
+                    <input type="password" id="pw1">
+                </li>
+                <li>
+                    <lable for="pw2">비밀번호 확인</lable>
+                    <input type="password" id="pw2">
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>이벤트와 새로운 소식</legend>
+            <input type="radio" name="mailing" id="mailing_y" value="yes">
+            <label for="mailing_y">메일수신</label>
+            <input type="radio" name="mailing" id="mailing_n" value="no">
+            <label for ="mailing_n">메일수신안함</label>
+                    
+        </fieldset>
+        <div>
+            <input type="submit" value="가입하기">
+            <input type="reset" value="취소"> <!--reset은 돌아감.-->
+        </div>
+
+
+<!-- 개인-->
+        <div>
+            <ul>
+                <li>
+                    <label><input type="checkbox" value="s_3">선물용 3kg</label>
+                    <input type="number" min="0" max="5">개
+                </li>
+                <li>
+                    <label><input type="checkbox" value="s_5">선물용 5kg</label>
+                    <input type="number" min="0" max="3" value="1">개
+                </li>
+            </ul>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/login" method="post">
+        <fieldset>
+            <label>아이디: <input type="text" name="user_id" value="ddd"> </label>
+            <label> 비밀번호: <input tyep="password" name="user_pw"></label>
+            <input type="submit" value="로그인">
+            <button>로그인2</button> <!-- button태그만 쓰면 날아감, 안날아가게 하려면-->
+            <button type="button">로그인2</button>
+            <input type="reset" value="초기화">
+        </fieldset>
+    </form>
+
+    <input type="submit" value="서브밋버튼">
+    <input type="button" value="버튼버튼"> <!--얘는 속성 값으로  text로 변경.-->
+
+
+    <button type="submit">버튼버튼2</button>
+    <form>
+        <fieldset>
+            <label>아이디: <input type="text" name="user_id" value="ddd"> </label>
+            <label> 비밀번호: <input tyep="password" name="user_pw"></label>
+            <div>
+                <label>성별</label>
+            </div>
+            <div>
+                <label for="user_gender">성별</label>
+            </div>
+            <div>
+                <label type="text" id="user_gender" name="user_gender"></label>
+            </div>
+        </fieldset>
+    </form>
+
+</body>
+</html>
+
+<!--
+
+    method = form을 날리는 방식.
+    action = form의 주소값.
+
+    label태그 밖에 아이디:을 입력시에는 화살표가 아닌 텍스트모양으로 변경.
+
+    input type은 종류가 많다. 130page
+    text는 작성하는 게 보임.
+    password는 작성하는 게 점으로 보임.
+
+    submit= 이 action으로 이 method로 날아감.
+
+    reset은 설정한 value값이 있으면 그 값으로 돌아감.
+
+    value값은 최초값을 말함. 처음에 띄울때
+    value값을 설정했다면 초기화시키면 그 값으로 돌아감.
+
+    버튼만드는 방법.
+    label, input은 form태그 안에 들어 있어서 가능. 
+    form태그 밖은 그냥 버튼.
+
+    form바깥에 있는것과 안에 있는 것은 차이가 있다. 
+
+    form안에 라벨 안에 name은 꼭 적어야함.
+
+
+
+    div를 작성해서 적을땐, 경로가 없으므로 label태그 안에 for를 작성해 준다. id와 동일한 이름으로.
+
+
+-->

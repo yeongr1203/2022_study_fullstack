@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>My Form</h1>
+    <form action="/login">
+        <div><input type="hidden" name="iuser" value="1" readonly></div>
+        <div>
+            <input type="text" name="uid" placeholder="user id" autofocus required>
+        </div>
+        <div><input tyep="password" name="upw" placeholder="user password" required></div>
+        <div><label>프사 : <input type="file"  name="pic" accept="image/*" multiple></label></div>
+        <div>
+        <div>
+            <label>남긴 말 <textarea cols="20" row="40" name="cmt">bbb</textarea></label>
+        </div>
+        <div>
+            <label>
+                지역 :
+                <select name="location">
+                    <option>서울입니다.</option>
+                    <option>대전입니다.</option>
+                    <option>대구입니다.</option>
+                    <option>부산입니다.</option>
+                </select>
+            </label>
+        </div>
+        <div>
+            취미:
+            <label><input type="checkbox" name="hobbit" value="1" checked>농구</label>
+            <label><input type="checkbox" name="hobbit" value="2" >축구</label>
+            <label><input type="checkbox" name="hobbit" value="3" checked>배구</label>
+            <label><input type="checkbox" name="hobbit" value="4" >탁구</label>
+        </div>
+        <div>
+            성별 : 
+            <label>여성<input type="radio" name="gender" value="0" checked></label>
+            <label>남성<input type="radio" name="gender" value="1"></label>
+        </div>
+            <input type="submit" value="login">
+            <input type="reset" value="reset">
+        </div>
+    </form>
+</body>
+</html>
+
+<!--개발자라면 익숙해져야함
+
+10// myForm첫문장은 소문자로 대신중간에대문자하나정도 넣을 수 있음.
+
+14// autofocus 텍스트커서가 자동으로 가있으며, 깜빡거림.
+
+17// accept="image/*"는 이미지폴더가 선택됨. multiple 입력시 여러개 선택이 가능함.
+20//textarea 여러줄 입력할 수 있는 태그, value는 적용할 수 없음. 만약  value를 하고 싶을 땐,
+    <label>남긴 말 <textarea cols="20" row="40" name="cmt">bbb</textarea></label>
+    value는 input에서 사용. textarea는 사용불가.
+25// select는 사이즈 기본값이 1, multiple 잘 사용 안함.
+    보여주는 값과 보내는 값을 다르게 하고 싶을 경우. value="" 안에 있는 값을 보냄.
+            <select name="location" multiple>
+                    <option value="1">서울</option>
+                    <option value="2">대전</option>
+                    <option value="3">대구</option>
+                    <option value="4">부산</option>
+                </select> ----서울입니다. 이것을 보내는 것 같지만, 1을 보냄.
+    먼저 보여지고 싶은 게 대구입니다. 일경우는 작성한것 위치만 변경해도 됨.
+     1번           <select name="location" multiple>
+                    <option value="3">대구입니다.</option>
+                    <option value="1">서울입니다.</option>
+                    <option value="2">대전입니다.</option>
+                    <option value="4">부산입니다.</option>
+                </select>
+     2번           <select name="location" multiple>
+                    <option value="1">서울입니다.</option>
+                    <option value="2">대전입니다.</option>
+                    <option value="3" selected>대구입니다.</option>
+                    <option value="4">부산입니다.</option>
+                </select>
+
+35// checked 입력하면 열면 바로 체크가 되어 있음.
+
+42// value값을 꼭 숫자로 주지 않아도 됨.
+
+//value값은 checkbox, radio에는 반드시 value값이 꼭 있어야함.
+
+
+
+-->

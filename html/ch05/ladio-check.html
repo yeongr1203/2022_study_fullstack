@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>상품선택</legend>
+            <P><b>주문할 상품을 선택해 주세요.</b></P>
+            <label><input type="checkbox" value="s_3" checked>선물용 3kg</label>
+            <label><input type="checkbox" value="s_5">선물용 5kg</label>
+            <label><input type="checkbox" value="f_3">가정용 3kg</label>
+            <label><input type="checkbox" value="f_5">가정용 5kg</label>
+            <p><b>포장 선택</b></p>
+            <label><input type="radio" name="gift" value="yes">선물 포장</label>
+            <label><input type="radio" name="gift" value="no">선물 포장 안 함</label>
+            <label><input type="radio" name="gift" value="yes">선물 포장1</label>
+            <label><input type="radio" name="sss" value="no">선물 포장 안 함2</label>
+            <div>
+                <input type="submit" value="주문">
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
+
+<!--
+
+<div>를 하면, 체크해서 div버튼 날리면 날린 값만 날아가서 데이터베이스에 저장됨.
+켜자마자 체크되도록 하려면 
+
+
+value 값 다음에 checked를 적으면 자동으로 선택됨.
+checkbox 는 옵션.
+
+ radio는 
+선택 1개만 해야할 때 사용, 2개가 선택이 안됨.
+checked는 반드시 체크해야함. 그래야 선택을 안하고 넘길 수는 없다 .
+name을 같이 설정해야 4개중에 하나로 선택할 수 있음. 이름이 다른 경우에는 선택이 3개가 아닌 같은 값들 중 하나만 가능.
+
+
+
+
+-->

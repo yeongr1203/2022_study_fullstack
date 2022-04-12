@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, td, th { border: 1px solid #000; } 
+    </style><!--태그에 스타일을 줌.-->
+</head>
+<body>
+    <h1>테이블</h1> <!--요즘은 사용하지 않고, 브라우저 작업은 테이블 사용하지 않음. 테이블스타일로 꾸려야할때 사용.-->
+    <table>
+        <caption>학생리스트</caption> 
+        <!--caption은 안써도 됨. 시각장애인들은 저게 무엇있지 모를 수 있기 떄문에 달아주는것. 달아주는 것이 좋다.
+            caption은 반드시 table안에 작성되어야만 자신이 가지고 있는 중간정렬을 가질 수 있다.-->
+        <!--tr/행, td/열, -->
+        <thead><!-- 첫 줄에 thead일 경우에만 thead로 설정을 할 수 있지만, 좌측으로 값이 될 경우에는 사용이 불가능함.-->
+            <tr>
+                <th>이름</th> <!--th태그는 시멘틱태그, 의미가 있는 태그, 카테고리 느낌. -->
+                <th>나이</th>
+                <th>성별</th>
+            </tr>
+        </thead>
+        <tbody> <!--tbody로 감싸주기.-->
+            <tr><!--각주는 tr-->
+                <td>신사임당</td>
+                <td>24</td>
+                <td>여자</td>
+            </tr>
+            <tr>
+                <td>홍길동</td>
+                <td>22</td>
+                <td>남자</td>
+            </tr>
+            <tr>
+                <td>홍길동</td>
+                <td>22</td>
+                <td></td> <!--내용이 없더라도 td태그는 반드시 있어야 함.-->
+            </tr>
+    </tbody>
+    <!--tfooter는 잘 사용하지 않음.-->
+    </table>
+</body>
+</html>
+
+
+<!--
+ ex) aside태그 안에 nav태그를 넣을 수 있음. 
+ 사이드바 영역에 네비를 넣을 수 있는데, 모든 태그는 부모태그와 자식태그로 둘 수 있다.
+
+
+
+-->
