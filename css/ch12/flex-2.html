@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p { margin: 0; padding: 0; }
+        .container {
+            display: flex;            
+            border: 1px solid #111; 
+            background-color: aliceblue; 
+
+            margin-bottom: 10px;
+        }  
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:100px; height:30px;
+            background-color: #111; color:#fff; margin: 2px;}     
+        #opt1 { flex-wrap: nowrap;} 
+        #opt2 { flex-wrap: wrap; }
+        #opt3 { flex-wrap: wrap-reverse; }
+        /* 밑에서 부터 시작. 2번과 모양이 반대.*/
+
+
+    </style>
+</head>
+<body>
+    <div class="container" id="opt1">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+            <div class="box"><p>5</p></div>
+            <div class="box"><p>6</p></div>
+      </div>
+      <div class="container" id="opt2">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+            <div class="box"><p>5</p></div>
+            <div class="box"><p>6</p></div>
+      </div>
+      <div class="container" id="opt3">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+            <div class="box"><p>5</p></div>
+            <div class="box"><p>6</p></div>
+       </div>
+      <div class="container" id="opt4">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+            <div class="box"><p>5</p></div>
+            <div class="box"><p>6</p></div>
+      </div>      
+</body>
+</html>
+
+<!-- 
+     div를 추가할수록 계속해서 늘어남. 채워지다 안되면 넘침.
+
+ -->
+
+ <!-- 
+    .box에 display를 준 이유는 텍스트가 가운데 오게하기위해서 작성.
+    flow = 
+    wrap에 메인에 100px을 줘서 그걸 진열하다 공간이 안나오면 다음줄에 배치.
+    wrap-reverse 는 wrap의 반대가 됨.
+    둘째줄이 첫째줄로 가고 첫째줄이 둘째줄로감.
+
+  -->

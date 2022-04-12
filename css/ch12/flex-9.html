@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .layout{
+            max-width: 600px;
+            margin: 0 auto; /*중앙정렬*/
+            padding: 0;
+        }
+        /* max-width 없었다면 부모값을 다 적용시켰을것임. div는 블락태그 
+            div가 body안에 600이 최대로 나타나도록 설정. 자식들이 거기에 맞춰 축소된다.
+            그냥 위드값일 경우에는 죽이면 바로 스크롤이 생겨버림.
+        */
+        .flexbox {         
+            display: flex; 
+            flex-wrap: nowrap; 
+            gap: 10px; 
+            padding: 10px; 
+            background-color: #e8e8e8;
+        }
+        /* 
+            플렉스를 주고 gap은 item들 간격 주는 것. padding값이 있어서 테두리도 값이 생김.
+        */
+        .item { flex-basis: 200px;  min-height: 150px; }
+        /* flex-basis = 아이템의 크기를 정함. 일단 기본적으로 그 값을 차지함. */
+        .item:nth-child(odd) { background-color: aqua; flex-grow: 1; }
+        /* 홀수, 플렉스가 1씩 들어가있고, */
+        .item:nth-child(even) { background-color: blueviolet }
+        /* 짝수, 플렉스가 없음. */
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div class="flexbox">
+            <item class="item" sytle="clex-grow:1; flex-shrink:1;">content1</item>
+            <item class="item" style="flex-shrink: 0;">content2</item>
+            <!-- shrink 기본값=1, 공간이 작아질때 브라우저 창 축소시켜도 줄어들지 않음.
+                숫자가 높을 수록 빨리 줄어든다. 0을 줄경우에는 줄어들지 않는다.
+                flex-wrap:wrap 속성을 부여한 경우 적용되지 않음.
+            -->
+            <item class="item" style="flex-shrink: 0;" >content3</item>
+            <item class="item" style="flex-shrink: 0;">content4</item>
+        </div>
+    </div>
+</body>
+</html>

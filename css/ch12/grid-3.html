@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS Grid Layout</title>
+  <style>
+   #wrapper1{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));  /* 화면을 꽉 채울만큼 칼럼 너비를 늘려서 표시 */
+    margin-bottom:20px;
+    /* 오토핏은 부모크기를 맞추려고 한줄로 정렬됨. //남는 공간을 무조건 채우기 */
+  }
+  #wrapper2{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));  /* 칼럼 최소 너비만큼 채워서 표시 */
+  }    
+/*  지정된 너비만큼만 채워서 나타남. 화면을 꽉 채우지 않음. //남는 공간을 채우지 않음 */
+  h1 {
+    font-size:24px;
+  }
+  .items{
+    padding:15px;
+    background-color:#eee;
+  }   
+  .items:nth-child(odd){
+    background-color:#bbb;
+  }
+  </style>
+
+</head>
+<body>
+  <h1>auto-fit일 때</h1>
+  <div id="wrapper1">            
+    <div class="items">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta nesciunt magni voluptatem.</div>
+    <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+    <div class="items">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius nulla corrupti porro!</div>
+    <div class="items">Lorem ipsum dolor sit.</div>
+    <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, quos!</div>
+    <div class="items">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro odit quam sit.</div>
+  </div>
+
+  <h1>auto-fill일 때</h1>
+  <div id="wrapper2">            
+    <div class="items">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta nesciunt magni voluptatem.</div>
+    <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+    <div class="items">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius nulla corrupti porro!</div>
+    <div class="items">Lorem ipsum dolor sit.</div>
+    <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, quos!</div>
+    <div class="items">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro odit quam sit.</div>
+  </div>
+</body>
+</html>
+<!-- 
+ 한줄에 나와야하는 갯수가 정해져있지 않고 상관없을때 주로 사용.
+ 
+
+ -->

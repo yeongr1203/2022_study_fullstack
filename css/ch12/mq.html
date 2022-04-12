@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 40px;
+            background: url('images/bg0.jpg') no-repeat fixed;
+            background-size: cover;
+        }
+        /* 아래의 값은 ( 데스크탑 기준 )스크린 사이즈 및 최대 1024px가 아닌경우에는 상단 body에 준 
+        그대로 작동됨.
+        폰트는 기본값이므로 사이즈가 변동 되어도 그대로 출력.
+        변경할 경우에는 미디어 값에 폰트 사이즈도 넣어야 변경되어서 출력됨.
+        */
+
+        @media screen and (max-width:1024px) {
+            body {
+                background:url('images/bg1.jpg') no-repeat fixed;
+                background-size: cover;
+
+            }
+
+        }
+        @media screen and (max-width:768px) {
+            body {
+                background:url('images/bg2.jpg') no-repeat fixed;
+                background-size: cover;
+
+            }
+
+        }
+        @media screen and (max-width:320px) {
+            body {
+                background:url('images/bg3.jpg') no-repeat fixed;
+                background-size: cover;
+
+            }
+
+        }
+    </style>
+
+</head>
+<body>
+    안녕하세요.
+</body>
+</html>

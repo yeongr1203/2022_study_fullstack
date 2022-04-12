@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin:0; box-sizing: border-box;}
+        body {
+            background: url('images/bg5.jpg') no-repeat fixed left top;
+            background-size: cover;
+            min-height: 100vh;
+            /* 배경이랑 실제 크기랑 따로노는 것 같아서
+            body의 크기만큼만 백그라운드가 씌워져 있어서 
+            100%와 동일한 높이를 준 100vh를 줬다.
+            */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            /* align-items 속성을 주지 않으면 align-items가 
+                기본값이 stretch가 됨. 
+            */
+        }
+        /* 플렉스를사용하기위해서는 부모가 있어야 함. 부모에 설정.
+        
+        
+        */
+    </style>
+</head>
+<body>
+    <button>클릭1</button>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p { margin: 0; padding: 0; }
+        .container {
+            display: flex;            
+            border: 1px solid #111; 
+            background-color: aliceblue; 
+            margin-bottom: 10px;
+            height:100px
+        }  
+        .box {
+            padding: 10px 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:50px;
+            background-color: #111; color:#fff; margin: 2px;} 
+
+        .box:nth-of-type(3) {height:50px;}   
+        #opt1 { align-items: flex-start; } /* 가장 기본값. */
+        #opt2 { align-items: flex-end; } /* 주축 끝 기준으로 배치됨. */
+        #opt3 { align-items: center; } /* 중앙정렬 */
+        #opt4 { align-items: baseline; } /* 텍스트 기준에 맞춰 배치 */
+        #opt5 { align-items: stretch; } /* 교차축에 가득 배치됨. */
+    </style>
+</head>
+<body>
+    <div class="container" id="opt1">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+            <div class="box"><p>5</p></div>
+            <div class="box"><p>6</p></div>
+      </div>
+      <div class="container" id="opt2">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+            <div class="box"><p>5</p></div>
+            <div class="box"><p>6</p></div>
+      </div>
+      <div class="container" id="opt3">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+            <div class="box"><p>5</p></div>
+            <div class="box"><p>6</p></div>
+       </div>
+      <div class="container" id="opt4">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+            <div class="box"><p>5</p></div>
+            <div class="box"><p>6</p></div>
+      </div>      
+      <div class="container" id="opt5">
+        <div class="box"><p>1</p></div>
+        <div class="box"><p>2</p></div>
+        <div class="box"><p>3</p></div>
+        <div class="box"><p>4</p></div>
+        <div class="box"><p>5</p></div>
+        <div class="box"><p>6</p></div>
+  </div>      
+</body>
+</html>
+
+<!-- 
+     div를 추가할수록 계속해서 늘어남. 채워지다 안되면 넘침.
+
+ -->

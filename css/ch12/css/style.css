@@ -1,0 +1,88 @@
+/* @import url('경로'); */
+/* css에서 css불러올때 */
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body {
+    background:rgb(9, 100, 160);
+}
+#container {
+    width:320px;        
+    margin:50px auto;
+}
+.card {
+    position:relative;    
+    width:300px;
+    height:500px;
+    margin:20px 10px;
+    border:1px solid #0f0f0f33;
+    background-color:#ffffff;      
+}
+.words {
+    position:absolute;    
+    left:10px;
+    top:300px;
+    padding:10px;
+    text-align:center;   
+}
+
+/* 
+    @media print and (min-width:768px) and (max-width:1439px) { }
+     screen을 print 로변경시, 프린트 했을때로 변경.
+
+     @media (min-width:768px) and (max-width:1439px) { }  값은
+     프린트와 동일해짐.
+
+
+*/
+
+@media screen and (min-width:768px) and (max-width:1439px) {
+    #container {
+        width:570px;        
+        margin:50px auto; /*변동이 되지 않을경우에는 작성할 필요 없음.*/
+    } /* min 최소값에서 max 최대값까지 포함.  screen and는 스크린포함. */
+    .card {
+        /* position:relative;     */
+        width:550px;
+        height:250px;
+        /* margin:20px 10px; */
+        /* border:1px solid #0f0f0f33;
+        background-color:#ffffff;       */
+        /* 기존 값 그대로 나가기 떄문에 바꿀 필요가 없어서 작성안해도 됨. */
+    }
+    .words {
+        /* position:absolute;     */
+        left:310px;
+        top:50px;
+        /* text-align:center; */
+        width:200px;          
+    }
+}
+
+@media screen and (min-width:1440px) {
+    #container {
+        width:1140px;
+        /* margin:50px auto; */
+    }    
+    .card {
+        /* position:relative; */
+        float:left;  /* 카드를 가로로 배치 */
+        width:550px;
+        height:250px;
+        margin:10px;
+        /* border:1px solid #0f0f0f33; */
+        /* background-color:#ffffff;       */
+    }
+    .words {
+        /* position:absolute;     */
+        left:310px;
+        top:50px;
+        /* text-align:center; */
+        width:200px;          
+    }
+}
+
+/*  주석처리는 중복이라 작성하지 않아도 되는 것. */

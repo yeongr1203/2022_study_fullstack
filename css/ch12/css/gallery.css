@@ -1,0 +1,18 @@
+* { box-sizing: border-box;}
+#wrapper {
+ 
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));  /* 너비 200px인 칼럼 3개 */
+  grid-gap : 20px 20px;
+
+}
+
+.card {
+    padding: 0 20px;
+    border: 1px solid #ccc; 
+
+}
+.card figure > img {
+ width:100%;
+ 
+}
