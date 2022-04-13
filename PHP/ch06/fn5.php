@@ -14,7 +14,7 @@
     {
 
         if ($enum < $snum) { 
-            print " -- 종료값이 더 작을 수 없습니다.-- ";
+            print " -- 종료값이 더 작을 수 없습니다.-- ";       // true 이고 print되고 return으로 돌아감.
             return;
         }
 

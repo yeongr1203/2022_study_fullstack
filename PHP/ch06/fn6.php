@@ -35,11 +35,11 @@
 
     $star= rand(3,10);
 
-    // print_star($star);
-    // print_star_line($star);
-    print_star_triangle($star);
+    // print_star($star);       // 1번문제
+    // print_star_line($star);  // 2번문제
+    print_star_triangle($star); // 3번문제
     
-    function print_star($star)
+    function print_star($star)      // 이 함수는 한줄에 몇개 찍을 수 있는지 알수있는 함수. 모두 이 함수를 응용해서 아래 문제들도 풀이함.
     {
         print " $star : $i ";
         for($i=1; $i<=$star; $i++)
