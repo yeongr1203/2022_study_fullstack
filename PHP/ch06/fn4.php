@@ -23,7 +23,7 @@
 
         function print_gugudan_form_to($sdan,$edan)
         {
-            for($dan=$stan; $dan<=$edan; $dan++)
+            for($dan=$stan; $dan<=$edan; $dan++)        // 
             {
                 print_gugudan($dan);
                 // 아래의 for문과 중복이므로 최대한 적게 작성해야하므로 위와 같이 간단하게 표현이 가능하다.
