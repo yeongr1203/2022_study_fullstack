@@ -2,14 +2,15 @@
 
     function counts()
     {
-        global $i;
+        // global $i;
+        $i;             //지역변수이므로 밖의 함수와 상관이 없음. 무한루트로 빠짐. 반드시 전역변수로 설정해줘야 밖의 변수를 사용할 수 있음.
         $i = $i + 1;
     }
 
 
 
     $i=0;
-    while($i<10)
+    while($i<10)            //while은 무한반복.
     {
         counts();            //전역변수 $i값을 1씩 증가시키는 변수.
         print $i."<br>";

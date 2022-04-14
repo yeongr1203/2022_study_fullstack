@@ -1,10 +1,10 @@
 <?php
 
-    function print_sum(...$vals)  // ...을 가변인자라고 부름.
+    function print_sum(...$vals)  // ...$vals을 가변인자(가변파라미터)라고 부름.
     {
         print $val;
-        $sum = 1;
-        for($i=1; $i < count($vals); $i++)
+        $sum = 0;
+        for($i=0; $i < count($vals); $i++)
         {
             $sum += $vals[$i];
         }        
