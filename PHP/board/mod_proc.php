@@ -7,7 +7,7 @@
     $i_board = $_POST['i_board']; 
     $title = $_POST['title'];
     $ctnt = $_POST['ctnt'];
-    // $mod_at = $_POST['mod_at'];
+    $mod_at = $_POST['mod_at'];
 
     $sql = 
     " 

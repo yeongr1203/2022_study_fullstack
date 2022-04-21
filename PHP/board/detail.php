@@ -3,7 +3,7 @@
 
     $i_board = $_GET['i_board'];                                // i_board의 값을 가져와서 변수로 적용
     $sql = " SELECT * FROM t_board WHERE i_board = $i_board ";  // $i_board를 가져와서 쿼리를 만듬 
-    // 키값을 넣었을때 가져올수 있는 경우의 수는 2개, 왜냐면 가져올수있고, 아닐수있어서 . 키값을 준 애를 가져오고 안가져오고 그래서 2개의 경우의 수.
+                                                                // 키값을 넣었을때 가져올수 있는 경우의 수는 2개, 왜냐면 가져올수있고, 아닐수있어서 . 키값을 준 애를 가져오고 안가져오고 그래서 2개의 경우의 수.
 
     $conn = get_conn();                     // 실행하자마자
     $result = mysqli_query($conn, $sql);    // 가져오고
