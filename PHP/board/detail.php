@@ -15,6 +15,7 @@
         $ctnt = $row['ctnt'];
         $create_at = $row['create_at'];
     }
+    // 하나만 가져올 수 있는 select문  // where절에 pk값이 있다는건 0개 또는 한개 가져온다.
 ?>
 <!DOCTYPE html>
 <html lang="en">

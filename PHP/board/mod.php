@@ -6,6 +6,10 @@
 
     $i_board = $_GET['i_board'];                                
     $sql = " SELECT title, ctnt FROM t_board WHERE i_board = $i_board ";
+    // SELECT title, ctnt FROM t_board WHERE i_board =  이건 리터럴 값, 문자열로 인식. 
+    // ${i_board} 이건 문자열과 붙여서 쓰고 싶을때 그냥 같이 쓰면 됨.
+    // 만약 문자열과 붙이고 싶을 때, aaa$i_board 이렇게 적으면 변수값을 인식못함.
+    // 그래서 괄호{}써주기 =>  aaa${i_board} 이렇게 작성.
 
     $conn = get_conn();                     
     $result = mysqli_query($conn, $sql);    
@@ -15,6 +19,10 @@
         $title = $row['title'];
         $ctnt = $row['ctnt'];
     }
+    //detail = logic부분이 비슷, write = html이 비슷,
+    // 이유 : 내가 쓴 내용을 수정하는것이기때문에 디테일은 보기만 가능하다면 수정은 보고 수정이 가능하기 때문에.
+    // 수정화면과 등록하면을 같이도 쓸 수 있고, 지금처럼 분리해서 할 수도 있다. = 취향차이
+    // 중복소스가 겹치는건 좋지 않으니 함께 쓰는 것도 괜찮다.
 ?>
 <!DOCTYPE html>
 <html lang="en">

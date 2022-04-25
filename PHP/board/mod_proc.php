@@ -22,6 +22,8 @@
     mysqli_close($conn);
     header("Location: detail.php?i_board=${i_board}");
 
+    // 수정이 끝나면 디테일로 가기 때문에 로케이션을 디테일로 넘어감.
+    // 만약 꼭 이동해야하는 페이지가 있다면 디테일말고 그 페이지로 넘어가도록 설정해도 됨.
 
 ?>
 
