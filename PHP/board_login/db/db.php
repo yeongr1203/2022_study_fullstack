@@ -16,17 +16,3 @@ function get_conn()
 // return mysqli_connect 여기는 보면 또 리턴, 이건 get_conn() 단계를 만들어줌.
 
 ?>
-
-<!-- 
-
-
-
-
-
-
-
-
-
-
-
- -->
