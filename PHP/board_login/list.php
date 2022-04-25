@@ -28,10 +28,13 @@
         <div>
             <a href="list.php">리스트</a>
             <a href="write.php">글쓰기</a>
-            <?=isset($_SESSION["login_user"]) ? "<a href='logout.php'>로그아웃</a>" : "" ?>
-            <!-- <a href="logout.php">로그아웃</a> -->
-        </div>
-        
+            <?=
+                isset($_SESSION["login_user"]) 
+                ? "<a href='logout.php'>로그아웃</a>" 
+                : "<a href='login.php'>로그인</a>" 
+            ?>
+
+        </div>        
         </header>
         <main>
             <h1>리스트</h1>
