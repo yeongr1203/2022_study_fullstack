@@ -3,7 +3,7 @@
 include_once "db.php";
 
 // 회원가입창
-function ins_user($param) {
+function ins_user(&$param) {    // &$param 앞에 &붙인 이유는 주소값을 날려주기 위해서 앞에 넣어줌.
     $uid = $param["uid"];
     $upw = $param["upw"];
     $nm = $param["nm"];
@@ -28,7 +28,7 @@ function ins_user($param) {
 }
 
 // 로그인_proc 구현.
-function sel_user($param){
+function sel_user(&$param){ // &$param 앞에 &붙인 이유는 주소값을 날려주기 위해서 앞에 넣어줌.
     $uid = $param['uid'];
     $sql = 
     "   SELECT i_user, uid, upw, nm, gender
@@ -41,4 +41,8 @@ function sel_user($param){
     $result = mysqli_query($conn, $sql);
     mysqli_close($conn);
     return mysqli_fetch_assoc($result);
+    // mysqli_fetch_assoc 해 줘야 첫번째 값을 배열로 전환시켜서 
+    // mysqli_fetch_assoc 얘는 나를 호출시켜서 리턴시키는데 값을 가지고 나를 호출한 곳으로 돌아가겠다 하는것.
+    // 그래서 login_proc에서 sel_user로 보낸것.
 }
+?>

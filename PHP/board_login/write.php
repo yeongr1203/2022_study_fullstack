@@ -15,7 +15,6 @@
             <input type="submit" value="글작성">
             <input type="reset" value="초기화">
         </div>
-
     </form>
 </body>
 </html>
