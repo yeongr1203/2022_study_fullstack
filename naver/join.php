@@ -7,7 +7,10 @@
     <title>회원 가입</title>
     <style>
         * { margin : 0; padding : 0;  }
-        body { width: 100%; margin: auto; align-items: center; position:relative;} 
+        body { width: 100%; margin: auto; display: flex; }
+        body > div { align-items: center; justify-content: center;  }
+        /* form > div { align-items: center; justify-content: center; }  */
+        .main_logo { width: 500px; }
     
     </style>
 </head>
@@ -29,7 +32,7 @@
             <div class="intt_3"><input type="text" name="no_name" placeholder="이름"></div>
         </div>
         <div>
-            <div>성  별</div>
+            <div class="gender">성  별</div>
             <div class="intt_4">
                 <input type="radio" name="mw" placeholder="성별" value="남"> 남자 
                 <input type="radio" name="mw" placeholder="성별" value="여"> 여자 
