@@ -55,13 +55,54 @@
         // return $result;
         return mysqli_fetch_assoc($result);
     }
-    
-// 이렇게도 작성이 가능.
-//         $sql = 
-//         "  
-//              SELECT t_board.i_board, t_board.title, t_board.i_user, t_board.created_at, t_user.uid
-//              FROM t_board
-//              INNER JOIN t_user ON t_board.i_user = t_user.i_user 
-//              ORDER BY t_board.i_board
-//              DESC
-//         "; 
+    // 이렇게도 작성이 가능.
+    //         $sql = 
+    //         "  
+    //              SELECT t_board.i_board, t_board.title, t_board.i_user, t_board.created_at, t_user.uid
+    //              FROM t_board
+    //              INNER JOIN t_user ON t_board.i_user = t_user.i_user 
+    //              ORDER BY t_board.i_board
+    //              DESC
+    //         "; 
+
+    // 수정하기
+    function upd_board(&$param){
+        $i_board = $param['i_board'];
+        $title = $param['title'];
+        $ctnt = $param['ctnt'];
+        $i_user = $param['i_user'];
+
+        $sql = 
+        "   UPDATE t_board
+            SET title = '$title'
+            , ctnt = '$ctnt'
+            , updated_at = now()
+            WHERE i_board = $i_board
+            AND i_user = $i_user
+        ";
+        $conn = get_conn();
+        $result = mysqli_query($conn, $sql);
+        mysqli_close($conn);
+        return $result;
+    }
+
+
+    //del.php
+    function del_board(&$param){
+
+        $i_board = $param['i_board'];
+        $i_user = $param['i_user'];
+
+        $sql = 
+        "   DELETE FROM t_board 
+            WHERE i_board = $i_board
+            and i_user = $i_user
+        ";
+        $conn = get_conn();
+        $result = mysqli_query($conn, $sql);
+        mysqli_close($conn);
+        return $result;
+
+        // delete 문에서는 참조당하는 애는 삭제가 안되지만, 참조를 하는 애는 그냥 삭제가 가능!!
+    }
+

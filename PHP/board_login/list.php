@@ -29,16 +29,16 @@
 <body>
     <div id="container">
         <header>
-        <?=isset($_SESSION["login_user"]) ? "<div>" . $nm . "님 환영합니다.</div>" : "" ?>
-        <div>
-            <a href="list.php">리스트</a>
-            <?php if(isset($_SESSION["login_user"])) { ?>
-                    <a href="write.php">글쓰기</a>
-                    <a href='logout.php'>로그아웃</a>
-            <?php } else { ?>
-                   <a href='login.php'>로그인</a>
-            <?php } ?>
-        </div>        
+            <?=isset($_SESSION["login_user"]) ? "<div>" . $nm . "님 환영합니다.</div>" : "" ?>
+            <div>
+                <a href="list.php">리스트</a>
+                <?php if(isset($_SESSION["login_user"])) { ?>
+                        <a href="write.php">글쓰기</a>
+                        <a href='logout.php'>로그아웃</a>
+                <?php } else { ?>
+                    <a href='login.php'>로그인</a>
+                <?php } ?>
+            </div>        
         </header>
         <main>
             <h1>리스트</h1>
@@ -53,12 +53,14 @@
                     </tr>
                 </thead> <!-- thead , tbody 꼭 안해도 됨. 빼도 됨. -->
                 <tbody>
+                    <?php foreach($list as $item) { ?>
                          <tr>
-                            <td><?=$list["i_board"]?></td>
-                            <td><a href="detail.php?i_board=<?=$list["i_board"]?>"><?=$list["title"]?></a></td>
-                            <td><?=$list["nm"]?></td>
-                            <td><?=$list["created_at"]?></td>
+                            <td><?=$item["i_board"]?></td>
+                            <td><a href="detail.php?i_board=<?=$item["i_board"]?>"><?=$item["title"]?></a></td>
+                            <td><?=$item["nm"]?></td>
+                            <td><?=$item["created_at"]?></td>
                          </tr>
+                    <?php }?>
                 </tbody>
             </table>
         </main>
