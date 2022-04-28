@@ -22,7 +22,7 @@
         .join_box > .join_i > div {padding: 5px 0; width: 300px; }
 
         form > .j_finish > input { width: 400px; height: 40px; border: 7px solid #1EC800; font-size: 20px;
-                        background-color: #1EC800; align-items: center; color:white; margin: 0 10px; } 
+                        background-color: #ccc; align-items: center; color:white; margin: 0 10px; } 
         form > .j_finish > input:hover { color:#1EC800; font-weight: bold; border:2px solid #1EC800; background-color: #fff;}
         
         
