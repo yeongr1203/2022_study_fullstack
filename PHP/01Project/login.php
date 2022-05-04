@@ -9,9 +9,9 @@
 <body>
     <a href="main.php"><button>홈으로</button></a>
     <a href="join.php"><button>회원가입</button></a>
-    <form action="login.php" method="POST">
+    <form action="login_proc.php" method="POST">
         <div><input type="text" name="uid" placeholder="아이디"></div>
-        <div><input type="password" nmae="upw" placeholder="비밀번호"></div>
+        <div><input type="password" name="upw" placeholder="비밀번호"></div>
         <div><input type="submit" value="로그인"></div>
     </form>
 </body>
