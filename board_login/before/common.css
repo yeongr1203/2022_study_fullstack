@@ -1,0 +1,16 @@
+* {box-sizing: border-box; padding: 0; margin:0;}
+html, body { height: 100%; }
+a { text-decoration: none; color: #000;}
+#container { display: grid; grid-template-rows: 100px 1fr; min-height: 100vh; }
+/* #은 아이디 값이 container인 애를 선택하겠다! 라는 뜻. */
+/* 가로는 100픽셀, 세로는 크기만큼. */
+#container > header { background-color: rgb(141,133,241); 
+                        display: flex; align-items : center; padding: 10px 20px; }
+#container > main { padding: 10px 10px; } 
+#container > main > table { text-align: center; }
+
+.selected_page { font-weight: bold;  }
+.selected_page > a { color: rgb(239, 71, 71); } 
+/* a태그에 바로 주는게 1순위이기 때문에 바로 주기. */
+
+
