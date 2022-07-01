@@ -1,0 +1,19 @@
+파이썬 크롤링 셋팅
+
+1) vsc에 python 설치
+2) 컴퓨터에도 python설치(경로 잘 알아두기)
+3) 메인에서 컨트롤 + 쉬프트 + P 누르고 python:sele까지만 치면 in~이라고 하는게 나옴....
+
+4) 터미널에서 두개 설치
+pip install beautifulsoup4
+pip install requests
+
+5) 환경변수에 파이썬 등록하기
+시스템 설정 > 고급 > 환경 변수 > 시스템 변수에서 Path 더블클릭 > 파이썬 실행파일 위치 추가
+ex) C:\Users\Administrator\AppData\Local\Programs\Python\Python310\pythonw.exe ->실행 파일 위치
+C:\Users\Administrator\AppData\Local\Programs\Python\Python310 ->환경 변수 등록
+
+6) php에서 파이썬 파일 실행 시 
+exec() 함수 사용
+형식 : exec('실행파일 위치 파일이름') =>위치와 파일 이름 사이에 스페이스 한칸있음!!
+ex) exec('C:\Users\Administrator\AppData\Local\Programs\Python\Python310\python.exe test.py');
