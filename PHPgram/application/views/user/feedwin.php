@@ -1,4 +1,4 @@
-<div id="gData" data-toiuser="<?=$this->data->iuser?>"></div>
+<div id="lData" data-toiuser="<?=$this->data->iuser?>"></div>
 <div class="d-flex flex-column align-items-center">
     <div class="size_box_100"></div>
     <div class="w100p_mw614">
@@ -42,6 +42,8 @@
                                 $data_follow = 1;
                                 $cls = "btn-outline-secondary";
                                 $txt = "팔로우 취소";
+
+
                             } else if($this->data->youme === 1 && $this->data->meyou === 0) {  // 그게 아니라면 나만 안했다면 맞팔로우
                                 $txt = "맞팔로우";
                             }
@@ -52,7 +54,7 @@
                 </div>
                 <div class="d-flex flex-row">
                     <div class="flex-grow-1 me-3">게시물 <span><?=$this->data->feedCnt?></span> </div>
-                    <div class="flex-grow-1 me-3">팔로워 <span><?=$this->data->followerCnt?></span> </div>
+                    <div class="flex-grow-1 me-3">팔로워 <span id="feedUserfollow" ><?=$this->data->followerCnt?></span> </div>
                     <div class="flex-grow-1">팔로우 <span><?=$this->data->followCnt?></span> </div>
                 </div>
                 <div class="bold"><?=$this->data->nm?></div>

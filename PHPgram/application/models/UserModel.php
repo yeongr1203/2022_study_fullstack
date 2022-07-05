@@ -94,7 +94,7 @@ class UserModel extends Model {
     // -------------------------------- Feed ------------------------//
 
     public function selFeedList(&$param) {
-        $iuser = $param["iuser"];
+        // $iuser = $param["iuser"];
         $sql = 
         "   SELECT A.ifeed, A.location, A.ctnt, A.iuser, A.regdt
             , C.nm AS writer, C.mainimg
@@ -103,7 +103,6 @@ class UserModel extends Model {
             FROM t_feed A
             INNER JOIN t_user C
             ON A.iuser = C.iuser
-            AND c.iuser = {$iuser}  -- where 절에 넣어도 되고, 여기 넣어도 된다. 근데, 퍼포먼스 적으로 여기가 더 낫다.
             LEFT JOIN (
                 SELECT ifeed, COUNT(ifeed) AS cnt	
                 FROM t_feed_fav
@@ -113,13 +112,16 @@ class UserModel extends Model {
             LEFT JOIN (						
                 SELECT ifeed
                 FROM t_feed_fav
-                WHERE iuser = {$iuser}
+                WHERE iuser = :loginiuser
             ) F
             ON A.ifeed = F.ifeed
+            WHERE c.iuser = :toiuser  -- where 절에 넣어도 되고, ON 넣어도 된다. 근데, 퍼포먼스 적으로 WHERE가 더 낫다.
             ORDER BY A.ifeed DESC
             LIMIT :starIdx, :feedItemCnt
         ";
         $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":toiuser", $param["toiuser"]);
+        $stmt->bindValue(":loginiuser", $param["loginiuser"]);
         $stmt->bindValue(":starIdx", $param["starIdx"]);
         $stmt->bindValue(":feedItemCnt", _FEED_ITEM_CNT);
         $stmt->execute();

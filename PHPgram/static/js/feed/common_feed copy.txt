@@ -3,21 +3,28 @@ const feedObj = {
     itemLength: 0,
     currentPage: 1,
     swiper: null,
-    refreshSwipe: function() {
-        if(this.swiper !== null) { this.swiper = null; }
-        this.swiper = new Swiper('.swiper', {
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev'
-            },
-            pagination: { el: '.swiper-pagination' },
-            allowTouchMove: false,
-            direction: 'horizontal',
-            loop: false
-        });
-    },
     loadingElem: document.querySelector('.loading'),
     containerElem: document.querySelector('#container'),
+
+    insFeedCmt: function(param, inputCmt, divCmtList, spanMoreCmt) {
+        // enter를 쳤을 때, 이 method를 실행 시키겠다.
+        // 빼는 이유는 편하게 사용하려고. enter쳤을때도 실행 되도록!!
+            fetch('/feedcmt/index', {
+                method: 'POST',
+                body: JSON.stringify(param)
+            })
+            .then(res=>res.json())
+            .then(res => {
+                // console.log('icmt : ' + res.result);
+                if(res.result) {
+                    inputCmt.value = '';
+                    // 댓글 공간에 댓글 내용 추가
+                    // 댓글이 한개 이상인지에 대한 정보도 가져옴. 댓글이 1개면 1개만 가지고오고 1개이상이면 모두 가져오기.
+                    this.getFeedCmtList(param.ifeed, divCmtList, spanMoreCmt);                    
+                }
+            });
+    },
+
     getFeedCmtList: function(ifeed, divCmtList, spanMoreCmt) {        
         fetch(`/feedcmt/index?ifeed=${ifeed}`)  // fetch에서 ifeed값을 불러옴.
         .then(res=>res.json())  // json으로 실행.
@@ -40,33 +47,18 @@ const feedObj = {
         divCmtItemContainer.className = 'd-flex flex-row align-items-center mb-2';
         const src = '/static/img/profile/' + (item.writerimg ? `${item.iuser}/${item.writerimg}` : 'defaultProfileImg_100.gif');
         divCmtItemContainer.innerHTML = `
-            <div class="circleimg h24 w24 me-1 feedcmtuser">
+            <div class="circleimg h24 w24 me-1">
                 <img src="${src}" class="profile w24 pointer">
             </div>
             <div class="d-flex flex-row">
-                <div class="pointer me-2 feedcmtuser"> ${item.writer}</div>
+                <div class="pointer me-2"> ${item.writer}</div>
                 <div>${item.cmt} - <span class="rem0_7">${getDateTimeInfo(item.regdt)}</span> </div>
                 <div></div>
             </div>
         `;
-        // 댓글 쓴 사람의 프로필로 이동.
-        const feedcmtuser = divCmtItemContainer.querySelectorAll('.feedcmtuser');
-        feedcmtuser.forEach(el => {
-            el.addEventListener('click', e => {
-                location.href = `/user/feedwin?iuser=${item.iuser}`;
-            });          
-        });
-
-        /* 선생님풀이 - 아래 */
-        // const img = divCmtItemContainer.querySelectorAll('.feedcmtuser');
-        // img.addEventListener('click', e => {
-        //     moveToFeedWin(iuser);
-        // });
         return divCmtItemContainer;
     }, 
-    
-    // feed이미지 
-    makeFeedList: function(list) {        
+    makeFeedList: function(list) {
         if(list.length !== 0) {
             list.forEach(item => {
                 const divItem = this.makeFeedItem(item);
@@ -74,11 +66,20 @@ const feedObj = {
             });
         }
         
-        this.refreshSwipe();    
+        if(this.swiper !== null) { this.swiper = null; }
+        this.swiper = new Swiper('.swiper', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            },
+            pagination: { el: '.swiper-pagination' },
+            allowTouchMove: false,
+            direction: 'horizontal',
+            loop: false
+        });
+
         this.hideLoading();
     },
-
-    // 새 글 등록
     makeFeedItem: function(item) {
         console.log(item);
         const divContainer = document.createElement('div');
@@ -193,22 +194,23 @@ const feedObj = {
         const divCmtList = document.createElement('div');
         divContainer.appendChild(divCmtList);
         divCmtList.className = 'ms-3';
-
+        
         // 댓글 내용        
         const divCmt = document.createElement('div');
         divContainer.appendChild(divCmt);     
-
+        
         const spanMoreCmt = document.createElement('span');
 
+        
         if(item.cmt) {
             const divCmtItem = this.makeCmtItem(item.cmt);
             divCmtList.appendChild(divCmtItem);
-
+            
             if(item.cmt.ismore === 1) {                
                 const divMoreCmt = document.createElement('div');
                 divCmt.appendChild(divMoreCmt);
                 divMoreCmt.className = 'ms-3 mb-3';
-    
+                
                 divMoreCmt.appendChild(spanMoreCmt);
                 spanMoreCmt.className = 'pointer rem0_9 c_lightgray';
                 spanMoreCmt.innerText = '댓글 더보기';
@@ -241,43 +243,16 @@ const feedObj = {
             <input type="text" class="flex-grow-1 my_input back_color p-2" placeholder="댓글을 입력하세요...">
             <button type="button" class="btn btn-outline-primary">등록</button>
         `;
-        
-        // 댓글 작성 영역!!
-                // 댓글 등록
+
+        // 댓글 더보기
         const inputCmt = divCmtForm.querySelector('input');
-        // 댓글 내용 입력하고 엔터만 쳐도 댓글 등록이 됨.
-        inputCmt.addEventListener('keyup', e => {
-            if(e.key === 'Enter') {
-                btnCmtReg.click();
-            }
-        });
-
-        
-
         const btnCmtReg = divCmtForm.querySelector('button');
         btnCmtReg.addEventListener('click', e => {
-            // enter를 쳤을 때, 이 method를 실행 시키겠다.
-            // 빼는 이유는 편하게 사용하려고. enter쳤을때도 실행 되도록!!
-
             const param = {
                 ifeed: item.ifeed,
                 cmt: inputCmt.value
             };
-            fetch('/feedcmt/index', {
-                method: 'POST',
-                body: JSON.stringify(param)
-            })
-            .then(res=>res.json())
-            .then(res => {
-                // console.log('icmt : ' + res.result);
-                if(res.result) {
-                    inputCmt.value = '';
-                    // 댓글 공간에 댓글 내용 추가
-                    // 댓글이 한개 이상인지에 대한 정보도 가져옴.
-                    // 댓글이 1개면 1개만 가지고오고 1개이상이면 모두 가져오기.
-                    this.getFeedCmtList(param.ifeed, divCmtList, spanMoreCmt);                    
-                }
-            })
+            this.insFeedCmt(param, inputCmt, divCmtList, spanMoreCmt)
         });
 
         return divContainer;
@@ -288,7 +263,7 @@ const feedObj = {
 
 }
 
-// 원래자리 요기
+
 function moveToFeedWin(iuser) {
     location.href = `/user/feedwin?iuser=${iuser}`;
 }
@@ -346,20 +321,8 @@ function moveToFeedWin(iuser) {
                         .then(myJson => {
                            console.log(myJson);
 
-                           if(myJson) {                                
+                           if(myJson.result) {                                
                                 btnClose.click();
-
-                                // 남의 feedWin에서 새 글 등록 -> 메인 feed에서만 보임.
-                               const lData = document.querySelector('#lData');
-                               const gData = document.querySelector('#gData');
-                                if(lData && lData.dataset.toiuser !== gData.dataset.loginiuser ) {
-                                    return;
-                                }
-
-                                // 남의 feedWin이라면 화면에 등록!
-                                const feedItem = feedObj.makeFeedItem(myJson);
-                                feedObj.containerElem.prepend(feedItem);
-                                feedObj.refreshSwipe();
                            }
                         });
                         

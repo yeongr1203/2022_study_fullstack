@@ -111,12 +111,15 @@ class UserController extends Controller {   // aplication 파일에 controller�
                 $starIdx = ($page -1) * _FEED_ITEM_CNT;
                 $param = [
                     "starIdx" => $starIdx,
-                    "iuser" => getIuser()
+                    "toiuser" => $_GET["iuser"],
+                    "loginiuser" => getIuser()
                 ];
             $list = $this->model->selFeedList($param);
             foreach($list as $item) {
+                $param2 = ["ifeed" => $item->ifeed];
+                $item->imgList = Application::getModel("feed")->selFeedImgList($param2);
                 // $item->imgList = $this->model->selFeedImg($item);
-                $item->imgList = Application::getModel("feed")->selFeedImgList($item);
+                // $item->imgList = Application::getModel("feed")->selFeedImgList($item);
                 // 스태틱 사용하면 안될때? 
                 // 객체 생성 했을 때, 다른 값을 넣으려하면 절때 스테틱을 사용하면 안됨.
                 // 사용하려는 객체에 스태틱이 안붙은 멤버필드를 메소드에 사용해야한다면 스태틱을 붙이면 안됨. 그것 빼고는 붙일 수 있음.

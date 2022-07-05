@@ -39,7 +39,7 @@ class FeedController extends Controller {
                     "ctnt" => $_POST["ctnt"],
                     "iuser" => getIuser()
                 ];
-                $ifeed= $this->model->insFeed($param);
+                $ifeed = $this->model->insFeed($param);
                 /* 여러개를 하나로 묶어서 작업해주는거 = 트랜지션*/
                 foreach( $_FILES['imgs']['name'] as $key => $originFileNm ) {
                     // // $file_name = explode(".", $_FILES['imgs']['name'][$key]);
@@ -65,11 +65,18 @@ class FeedController extends Controller {
                             "ifeed" => $ifeed,
                             "img" => $randomFileNm
                         ];
+                        // $this->model->insFeedImg($param);
+                        $param["img"] = $randomFileNm;
                         $this->model->insFeedImg($param);
                     }
                 }
                 // $imgCount = count($_FILES["imgs"]["name"]);
-                return [ "result" => 1 ];
+                // return [ "result" => 1 ];
+                
+                $param2 = ["ifeed" => $ifeed ];
+                $data = $this->model->selFeedAfterReg($param2);
+                $data -> imgList = $this->model->selFeedImgList($param2);
+                return $data;
 
             // ifeed 좋아요
             case _GET:
@@ -87,9 +94,11 @@ class FeedController extends Controller {
                     // $imgs = $this->model->selFeedImgList($item);
                     // $item->imgList = $imgs;
                     // 한줄 요약
-                    $item ->imgList = $this->model->selFeedImgList($item);
+                    $param2 = [ "ifeed" => $item->ifeed ];  // 배열로
+                    $item ->imgList = $this->model->selFeedImgList($param2);
+                    // $item ->imgList = $this->model->selFeedImgList($item); 1번
                     // cmt (댓글나오게)
-                    $param2 = [ "ifeed" => $item->ifeed ];
+                    // $param2 = [ "ifeed" => $item->ifeed ];  //1번 // 배열로
                     $item->cmt = Application::getModel("feedcmt")->selFeedCmt($param2);
                     // localhost/feed/rest?page=1 검색하면 cmt에 추가되고, 내용이 없으면 cmt:false로 나타난다.
                     

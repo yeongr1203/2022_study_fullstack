@@ -22,13 +22,13 @@ getFeedList();
 
 
 (function() {
-    const gData = document.querySelector('#gData');
+    const lData = document.querySelector('#lData');
 
     const btnFollow = document.querySelector('#btnFollow');
     if(btnFollow) { // 타인의 feed에 왔다는 것.
         btnFollow.addEventListener('click', function() {
             const param = {
-                toiuser: parseInt(gData.dataset.toiuser)
+                toiuser: parseInt(lData.dataset.toiuser)
             };
             console.log(param);
             // console.log('이벤트 클릭');  // 처음 먼저 찍어서 값 나오는지 확인.
@@ -47,11 +47,15 @@ getFeedList();
                             btnFollow.dataset.follow = '0';
                             btnFollow.classList.remove('btn-outline-secondary');
                             btnFollow.classList.add('btn-primary');
-                            if(btnFollow.dataset.youme === '1'){
-                                
+                            if(btnFollow.dataset.youme === '1'){                                
                                 btnFollow.innerText = '맞팔로우';
                             }
                             btnFollow.innerText = '팔로우';
+
+                            // 팔로워 실시간 수정
+                            const feedUserfollow = document.querySelector('#feedUserfollow');
+                            const cnt = feedUserfollow.innerHTML;
+                            feedUserfollow.innerHTML = parseInt(cnt) -1;
                         }
                     });
                     break;
@@ -69,8 +73,12 @@ getFeedList();
                             btnFollow.classList.add('btn-outline-secondary');
                             if(btnFollow.dataset.youme === '1' && btnFollow.dataset.meyou === '0'){
                                 btnFollow.innerText = '맞팔로우';
-                            }
+                            }                            
                             btnFollow.innerText = '팔로우 취소';
+
+                            const feedUserfollow = document.querySelector('#feedUserfollow');
+                            const cnt = feedUserfollow.innerHTML;
+                            feedUserfollow.innerHTML = parseInt(cnt) +1;
                         }
                     });
                     break;

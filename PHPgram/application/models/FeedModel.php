@@ -35,11 +35,12 @@ class FeedModel extends Model {
         // insert 확인용 -> 영향을 미친 레코드 수.
     }
     // ---------------------------- Feed -------------------------------
+
     // 피드 -> 좋아요
     public function selFeedList(&$param) {
         $sql = 
         "   SELECT A.ifeed, A.location, A.ctnt, A.iuser, A.regdt
-            , C.nm AS writer, C.mainimg
+            , C.nm AS writer, C.mainimg -- 글쓴이 mainimg
             , IFNULL(E.cnt, 0) AS favCnt
             , IF(F.ifeed IS NULL, 0, 1) AS isFav
             FROM t_feed A
@@ -67,6 +68,30 @@ class FeedModel extends Model {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
+    
+    /*    makeFeedItem에서 regdt, iuser, mainimg, writer 값을 받아서 등록 완료하면 자동으로 맨위에 나타나게 하기.
+        새글 등록할 때, result=1이 넘어와서 화면이 변경하는것. 성공하는 정보만 받아왔음.
+        그러지 않고 그 피드의 값을 바로 받아와서 makeFeedItem에 뿌려주면 거기서 받아와서 맨 위에 
+        새로고침없이 자동으로 추가 하게 하는 것.    */
+    // 즉, 새로고침없이 글 등록 되자마자 피드 맨 위에 나타남.
+    public function selFeedAfterReg(&$param) {   // Reg는 registration
+        $sql = 
+        "   SELECT A.ifeed, A.location, A.ctnt, A.iuser, A.regdt
+            , C.nm AS writer, C.mainimg 
+            , 0 AS favCnt
+            , 0 AS isFav
+            FROM t_feed A
+            INNER JOIN t_user C
+            ON A.iuser = C.iuser
+            WHERE A.ifeed = :ifeed
+            ORDER BY A.ifeed DESC
+            -- 1개만 가져오기 때문에 limit 필요 없음.
+        ";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":ifeed", $param["ifeed"]);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_OBJ);
+    }
 
     public function selFeedImgList($param) {    // 이때는 객체가 넘어옴.
         $sql = 
@@ -75,7 +100,8 @@ class FeedModel extends Model {
             WHERE ifeed = :ifeed
         ";
         $stmt = $this->pdo->prepare($sql);
-        $stmt -> bindValue(":ifeed", $param->ifeed);
+        // $stmt -> bindValue(":ifeed", $param->ifeed); // 선
+        $stmt -> bindValue(":ifeed", $param["ifeed"]);  // 후 => 이렇게 변경한 이유는 객체라서(배열)
         $stmt -> execute();
         return $stmt -> fetchAll(PDO::FETCH_OBJ);
     }
