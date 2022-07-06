@@ -1,3 +1,10 @@
+if(feedObj) {
+    feedObj.getFeedUrl = '/feed/rest';
+    feedObj.getFeedList();
+    feedObj.setScrollInfinity();    // infinityscroll 호출함.
+}
+
+/*
 function getFeedList() {
     if(!feedObj) { return; }
     feedObj.showLoading();            
@@ -15,3 +22,4 @@ function getFeedList() {
     });
 }
 getFeedList();
+*/
