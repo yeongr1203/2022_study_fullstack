@@ -1,4 +1,9 @@
 <?php
+// ??
+function delFile($path) {
+    unlink($path);
+}
+
 function getRandomFileNum($fileName) {  // 랜덤파일
     // 랜덤파일명 = gen_uuid_v4
     // 결과값 => de4fd857-fa96-4c15-84e2-0bc0292acb0a.jpg 

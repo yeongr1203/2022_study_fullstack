@@ -102,6 +102,7 @@ class UserController extends Controller {   // aplication 파일에 controller�
         return "template/t1.php";
     }
     
+    // feed
     public function feed() {
         if(getMethod()=== _GET) {
             $page = 1;
@@ -118,6 +119,7 @@ class UserController extends Controller {   // aplication 파일에 controller�
             foreach($list as $item) {
                 $param2 = ["ifeed" => $item->ifeed];
                 $item->imgList = Application::getModel("feed")->selFeedImgList($param2);
+                $item->cmt = Application::getModel("feedcmt")->selFeedCmt($param2);
                 // $item->imgList = $this->model->selFeedImg($item);
                 // $item->imgList = Application::getModel("feed")->selFeedImgList($item);
                 // 스태틱 사용하면 안될때? 
@@ -128,6 +130,7 @@ class UserController extends Controller {   // aplication 파일에 controller�
         }
     }
 
+    //follow
     public function follow() {
         // 필요한 값 => 팔로우 할꺼야, 취소 할꺼야.
         // 즉, post, delete만 사용할 것.
@@ -155,6 +158,25 @@ class UserController extends Controller {   // aplication 파일에 controller�
                 $param["toiuser"] = $_GET["toiuser"];
                 //선생님 풀이
                 return [_RESULT => $this->model->delFollow($param)];
+        }
+    }
+
+    public function profile() { 
+        // 삭제 = delete처리
+        switch(getMethod()) {
+            case _DELETE:
+                $loginUser = getLoginUser();    // 여기 저장된 값 중에 메인 이미지값을 뜻함. 왜냐면 실제로 그 값을 지워야 하니깐.
+                if($loginUser) {
+                    $path = "static/img/profile/{$loginUser->iuser}/{$loginUser->mainimg}";
+                    if(file_exists($path) && unlink($path)) {
+                        $param = ["iuser"=>$loginUser->iuser, "delMainImg" => 1 ];
+                        if($this->model->updUser($param)) {
+                            $loginUser->mainimg = null;
+                            return [_RESULT => 1 ];
+                        }
+                    }
+                }
+                return [_RESULT => 0];
         }
     }
 
