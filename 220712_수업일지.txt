@@ -1,0 +1,58 @@
+---------- 22 07 12 수업일지
+
+1.TodoController 파일 생성
+2.TodoModel 파일생성
+
+
+3. vue axios(엑시오스) 설치
+	=> npm으로 설치 / CDN으로 설치 두 가지 방법!
+C:\Users\Administrator>cd /
+C:\>d:
+D:\> cd vuejs
+D:\vuejs>dir	=> 디렉토리 확인
+D:\vuejs> cd vue-project
+D:\vuejs\vue-project>npm i --s axios
+[결과]
+npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+이후
+
+<은지표 정리본>
+// 앞에 한 작업과 동일(결과까지) : 
+cmd > 폴더까지 이동 > npm i --s axios 
+> vsc에서 package-lock.json파일에 "axios": "^0.27.2" 추가된지 확인
+ + node_modules 폴더에 "axios"폴더 있는지 확인하기!!
+
+그리고
+App.vue 파일에서 axios 참조시키기
+import axios from 'axios';
+하고
+
+proxy 작업을 위해 아래 작성.
+vue.config.js 파일에서 transpileDependencies: true, 아래에 추가
+  devServer: {
+    proxy: {
+      '/doto' : {
+        target: 'http://localhost'
+      }
+    }
+ 즉, defineConfig 안에 추가되는 것.
+<은지표 정리본>
+Proxy설정 : php에 정보를 보내야하는데 요청하지 않은 정보를 보내면 CORS때문에 전달이 안됨
+따라서 proxy설정하여 마치 php가 요청을 보낸것처럼 해서 정보를 전달해주는 역할
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
