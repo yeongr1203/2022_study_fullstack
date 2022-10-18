@@ -1,8 +1,0 @@
-* {box-sizing: border-box; padding: 0; margin:0;}
-html, body {height: 100%; }
-
-#container { display: grid; grid-template-rows: 100px 1fr; min-height: 100vh; }
-/* #은 아이디 값이 container인 애를 선택하겠다! 라는 뜻. */
-/* 가로는 100픽셀, 세로는 크기만큼. */
-#container > header { background-color: rgb(141,133,241); 
-                        display: flex; align-items : center; padding: 10px 20px; }
